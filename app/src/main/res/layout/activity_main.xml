@@ -6,12 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <Button
+        android:id="@+id/btn_leave"
+        android:layout_width="336dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="36dp"
+        android:text="Leave"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="336dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:text="Reset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_text" />
+
+    <Button
+        android:id="@+id/btn_display"
+        android:layout_width="336dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:text="Display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_reset" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\? * 0 = \? \n\? * 1 = \? \n\? * 2 = \? \n\? * 3 = \? \n\? * 4 = \? \n\? * 5 = \? \n\? * 6 = \? \n\? * 7 = \? \n\? * 8 = \? \n\? * 9 = \? \n\? * 10 = \? \n
+"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_leave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_display"
+        app:layout_constraintVertical_bias="0.471" />
+
+    <EditText
+        android:id="@+id/input_text"
+        android:layout_width="338dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
