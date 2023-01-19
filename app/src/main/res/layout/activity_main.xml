@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_reset" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/content_of_edit_text"
