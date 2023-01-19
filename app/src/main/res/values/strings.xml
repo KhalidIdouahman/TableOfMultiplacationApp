@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TP_02_Git_and_GitHube</string>
+    <string name="content_of_edit_text">\? * 0 = ? \n? * 1 = ? \n? * 2 = ? \n? * 3 = ? \n? * 4 = ? \n? * 5 = ? \n? * 6 = ? \n? * 7 = ? \n? * 8 = ? \n? * 9 = ? \n? * 10 = ?</string>
+    <string name="btn_display">Display</string>
+    <string name="btn_reset">Reset</string>
+    <string name="btn_leave">Leave</string>
+
 </resources>
