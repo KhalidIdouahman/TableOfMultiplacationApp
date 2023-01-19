@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <Button
@@ -43,6 +44,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/content_of_edit_text"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_leave"
@@ -55,12 +57,46 @@
         android:id="@+id/input_text"
         android:layout_width="338dp"
         android:layout_height="56dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
+        android:gravity="center"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_lavender" />
+
+    <Button
+        android:id="@+id/btn_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/white"
+        android:shadowColor="@color/shadow"
+        app:layout_constraintBottom_toTopOf="@id/input_text"
+        app:layout_constraintStart_toStartOf="@id/input_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_lavender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/lavender"
+        app:layout_constraintEnd_toStartOf="@id/btn_pink"
+        app:layout_constraintStart_toEndOf="@id/btn_white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_pink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/pink"
+        app:layout_constraintBottom_toTopOf="@id/input_text"
+        app:layout_constraintEnd_toEndOf="@id/input_text"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
