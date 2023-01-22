@@ -3,13 +3,12 @@ package com.example.tp_02_git_and_githube;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;  
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button btn_display, btn_reset,btn_leave;
@@ -32,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 input_text.setText("");
-                textView.setText("");
-                textView.setText(multiplicationDisplay2("?"));
+                multiplicationDisplay("?");
             }
         });
         btn_leave.setOnClickListener(new View.OnClickListener() {
@@ -46,15 +44,20 @@ public class MainActivity extends AppCompatActivity {
         btn_display.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int number = Integer.parseInt(input_text.getText().toString());
-                    textView.setText("");
-                    textView.setText(multiplicationDisplay2(number));
+                if (input_text.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please enter a number !!", Toast.LENGTH_LONG).show();
+                    multiplicationDisplay("?");
+                } else {
+                    int number = Integer.parseInt(input_text.getText().toString());
+                    multiplicationDisplay(number);
+                }
             }
         });
     }
 
     @SuppressLint("DefaultLocale")
-    public String multiplicationDisplay2(Object x) {
+    public void multiplicationDisplay(Object x) {
+        textView.setText("");
         String str = "";
         if (x instanceof Integer) {
             int num = (int) x;
@@ -62,12 +65,14 @@ public class MainActivity extends AppCompatActivity {
                 int result = num * i;
                 str += String.format("%d * %d = %s", num,i,result+"\n");
             }
+            textView.setText(str);
         } else {
             for (int i = 0; i < 11 ; i++) {
                 str += String.format("? * %d = ?\n" ,i);
             }
+            textView.setText(str);
         }
-        return str;
+
     }
 
 
