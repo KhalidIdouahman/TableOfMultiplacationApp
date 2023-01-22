@@ -2,12 +2,13 @@ package com.example.tp_02_git_and_githube;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.EditText;  
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,9 +33,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 input_text.setText("");
                 textView.setText("");
-                for (int i = 0; i < 11 ; i++) {
-                    textView.append(multiplicationDisplay("?",i,"?\n"));
-                }
+                textView.setText(multiplicationDisplay2("?"));
             }
         });
         btn_leave.setOnClickListener(new View.OnClickListener() {
@@ -43,16 +42,33 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        btn_display.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int number = Integer.parseInt(input_text.getText().toString());
+                    textView.setText("");
+                    textView.setText(multiplicationDisplay2(number));
+            }
+        });
     }
 
-    public String multiplicationDisplay(String place1 , int place2, String place3) {
-        return String.format("%s * %d = %s",place1,place2,place3);
+    @SuppressLint("DefaultLocale")
+    public String multiplicationDisplay2(Object x) {
+        String str = "";
+        if (x instanceof Integer) {
+            int num = (int) x;
+            for (int i = 0; i < 11 ; i++) {
+                int result = num * i;
+                str += String.format("%d * %d = %s", num,i,result+"\n");
+            }
+        } else {
+            for (int i = 0; i < 11 ; i++) {
+                str += String.format("? * %d = ?\n" ,i);
+            }
+        }
+        return str;
     }
 
-//    textView.setText("");
-//                for (int i = 0; i < 11 ; i++) {
-//        int y = 4;
-//        int x = y*i;
-//        textView.append(multiplicationDisplay(Integer.toString(y),i,Integer.toString(x))+"\n");
-//    }
+
 }
