@@ -1,5 +1,5 @@
 # Table Of Multiplication App
-This android application is designed for you to learn **_multiplication table_** . 
+This ==android== application is designed for you to learn **_multiplication table_** . 
 
 ##Features :
 
