@@ -2,6 +2,7 @@ package com.example.tp_02_git_and_githube;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    View layout;
     Button btn_display, btn_reset,btn_leave;
+    Button btn_white, btn_lavender,btn_pink;
     EditText input_text;
     TextView textView;
 
@@ -18,11 +21,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        layout = findViewById(R.id.main_layout);
+
         btn_reset = findViewById(R.id.btn_reset);
         btn_display = findViewById(R.id.btn_display);
         btn_leave = findViewById(R.id.btn_leave);
 
         input_text = findViewById(R.id.input_text);
+
+
+        btn_white = findViewById(R.id.btn_white);
+        btn_lavender = findViewById(R.id.btn_lavender);
+        btn_pink = findViewById(R.id.btn_pink);
+
+        btn_white.setOnClickListener(view -> layout.setBackgroundColor(Color.rgb(255 ,255 ,255)));
+        btn_lavender.setOnClickListener(view -> layout.setBackgroundColor(Color.rgb(241 ,151 ,255)));
+        btn_pink.setOnClickListener(view -> layout.setBackgroundColor(Color.rgb(253 ,155 ,206)));
 
         textView = findViewById(R.id.textView_display);
 
@@ -39,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
 
         btn_display.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,5 +89,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 
 }
